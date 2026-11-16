@@ -1,97 +1,125 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth motion-reduce:scroll-auto">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas | Rueda Libre</title>
     <meta name="description" content="Contacta a Rueda Libre para reservar tu bicicleta en Medellín.">
-    <link rel="stylesheet" href="../style.css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/menu.js" defer></script>
 </head>
-<body>
 
-    <header class="encabezado">
-        <a href="../index.html" class="marca">Rueda Libre Medellín</a>
+<body class="flex min-h-screen flex-col bg-white font-sans text-black">
 
-        <button class="menu-toggle" type="button" aria-expanded="false"
-                aria-controls="menu-principal" aria-label="Abrir menú">
-            <span></span><span></span><span></span>
+    <header class="sticky top-0 z-20 flex items-center justify-between gap-4 bg-amarillo px-[5%] py-4">
+        <a href="../index.html" class="text-xl font-bold">Rueda Libre Medellín</a>
+
+        <button type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú"
+            class="group/btn flex h-11 w-11 flex-col justify-center gap-[5px] rounded-md border-2 border-black bg-transparent p-2.5 lg:hidden">
+            <span
+                class="block h-0.5 rounded bg-black transition motion-reduce:transition-none group-aria-expanded/btn:translate-y-[7px] group-aria-expanded/btn:rotate-45"></span>
+            <span
+                class="block h-0.5 rounded bg-black transition motion-reduce:transition-none group-aria-expanded/btn:opacity-0"></span>
+            <span
+                class="block h-0.5 rounded bg-black transition motion-reduce:transition-none group-aria-expanded/btn:-translate-y-[7px] group-aria-expanded/btn:-rotate-45"></span>
         </button>
 
-        <nav class="menu-principal" id="menu-principal" aria-label="Principal">
-            <ul>
-                <li class="desplegable">
-                    <a href="../index.html">Inicio</a>
-                    <ul class="submenu">
-                        <li><a href="../index.html#quienes-somos">¿Quiénes somos?</a></li>
-                        <li><a href="../index.html#servicios">Nuestros servicios</a></li>
+        <nav id="menu-principal" aria-label="Principal"
+            class="absolute inset-x-0 top-full hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-black/20 bg-amarillo px-[5%] pb-4 pt-2 lg:static lg:block lg:max-h-none lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0">
+            <ul class="flex flex-col lg:flex-row lg:flex-wrap lg:items-center lg:justify-end lg:gap-8">
+
+                <li class="group/item relative lg:hover:cursor-pointer lg:hover:bg-white">
+                    <a href="../index.html"
+                        class="block border-b border-black/15 px-2 py-3 font-bold hover:bg-amarillo-claro lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-transparent">Inicio</a>
+                    <ul
+                        class="pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:hidden lg:min-w-[200px] lg:flex-col lg:bg-amarillo lg:p-0.5 lg:group-hover/item:flex lg:group-focus-within/item:flex">
+                        <li><a href="../index.html#quienes-somos"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">¿Quiénes
+                                somos?</a></li>
+                        <li><a href="../index.html#servicios"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Nuestros
+                                servicios</a></li>
                     </ul>
                 </li>
 
-                <li class="desplegable">
-                    <a href="tarifas.html">Tarifas y rutas</a>
-                    <ul class="submenu">
-                        <li><a href="tarifas.html#tarifas-alquiler">Ver tarifas</a></li>
-                        <li><a href="tarifas.html#recorridos">Recorridos guiados</a></li>
+                <li class="group/item relative lg:hover:cursor-pointer lg:hover:bg-white">
+                    <a href="tarifas.html"
+                        class="block border-b border-black/15 px-2 py-3 font-bold hover:bg-amarillo-claro lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-transparent">Tarifas
+                        y rutas</a>
+                    <ul
+                        class="pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:hidden lg:min-w-[200px] lg:flex-col lg:bg-amarillo lg:p-0.5 lg:group-hover/item:flex lg:group-focus-within/item:flex">
+                        <li><a href="tarifas.html#tarifas-alquiler"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Ver
+                                tarifas</a></li>
+                        <li><a href="tarifas.html#recorridos"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Recorridos
+                                guiados</a></li>
                     </ul>
                 </li>
 
-                <li class="desplegable">
-                    <a href="reservas.html" aria-current="page">Reservas</a>
-                    <ul class="submenu">
-                        <li><a href="../index.html#como-alquilar">¿Cómo alquilar?</a></li>
-                        <li><a href="../index.html#encuentranos">Encuéntranos</a></li>
+                <li class="group/item relative lg:hover:cursor-pointer lg:hover:bg-white">
+                    <a href="reservas.html" aria-current="page"
+                        class="block border-b border-black/15 px-2 py-3 font-bold hover:bg-amarillo-claro aria-[current=page]:underline lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-transparent">Reservas</a>
+                    <ul
+                        class="pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:hidden lg:min-w-[200px] lg:flex-col lg:bg-amarillo lg:p-0.5 lg:group-hover/item:flex lg:group-focus-within/item:flex">
+                        <li><a href="../index.html#como-alquilar"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">¿Cómo
+                                alquilar?</a></li>
+                        <li><a href="../index.html#encuentranos"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Encuéntranos</a>
+                        </li>
                     </ul>
                 </li>
+
             </ul>
         </nav>
     </header>
 
-    <div class="titulo-pagina">
-        <h1>Reserva tu bicicleta</h1>
+    <div class="bg-amarillo-claro px-[5%] py-8 text-center">
+        <h1 class="text-3xl font-bold sm:text-4xl">Reserva tu bicicleta</h1>
     </div>
 
-    <main>
-        <p>Contáctanos para consultar la disponibilidad de bicicletas.</p>
+    <main class="mx-auto w-full max-w-[900px] flex-1 px-[5%] py-10">
+        <p class="mb-4 max-w-[70ch]">Contáctanos para consultar la disponibilidad de bicicletas.</p>
 
-        <div class="contacto-tarjeta">
-            <h2>Escríbenos</h2>
+        <div class="mb-6 max-w-[560px] rounded-lg border border-black bg-white p-6">
+            <h2 class="mb-3 text-2xl font-bold">Escríbenos</h2>
             <p>
                 Correo:
-                <a href="mailto:somos@ruedalibre.co">somos@ruedalibre.co</a>
+                <a href="mailto:somos@ruedalibre.co" class="underline">somos@ruedalibre.co</a>
             </p>
         </div>
 
-        <div class="contacto-tarjeta">
-            <h2>Horario de atención</h2>
+        <div class="mb-6 max-w-[560px] rounded-lg border border-black bg-white p-6">
+            <h2 class="mb-3 text-2xl font-bold">Horario de atención</h2>
             <dl>
-                <dt>Lunes a viernes</dt>
+                <dt class="mt-3 font-bold">Lunes a viernes</dt>
                 <dd>7:00 a. m. a 7:00 p. m.</dd>
 
-                <dt>Sábados, domingos y festivos</dt>
+                <dt class="mt-3 font-bold">Sábados, domingos y festivos</dt>
                 <dd>6:00 a. m. a 2:00 p. m.</dd>
             </dl>
         </div>
     </main>
 
-    <footer>
-        <div class="pie-bloque">
-            <h3>Rueda Libre</h3>
-            <p>Alquiler de bicicletas en Medellín</p>
+    <footer class="grid bg-amarillo sm:grid-cols-2 lg:grid-cols-3">
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Rueda Libre</h3>
+            <p class="mb-1">Alquiler de bicicletas en Medellín</p>
         </div>
-
-        <div class="pie-bloque">
-            <h3>Contacto</h3>
-            <p><a href="mailto:somos@ruedalibre.co">somos@ruedalibre.co</a></p>
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Contacto</h3>
+            <p class="mb-1"><a href="mailto:somos@ruedalibre.co" class="underline">somos@ruedalibre.co</a></p>
         </div>
-
-        <div class="pie-bloque">
-            <h3>Horario</h3>
-            <p>Lunes a viernes: 7:00 a. m. - 7:00 p. m.</p>
-            <p>Sábados, domingos y festivos: 6:00 a. m. - 2:00 p. m.</p>
-            <p>© 2026 Rueda Libre</p>
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Horario</h3>
+            <p class="mb-1">Lunes a viernes: 7:00 a. m. - 7:00 p. m.</p>
+            <p class="mb-1">Sábados, domingos y festivos: 6:00 a. m. - 2:00 p. m.</p>
+            <p class="mb-1">© 2026 Rueda Libre</p>
         </div>
     </footer>
 
 </body>
+
 </html>
