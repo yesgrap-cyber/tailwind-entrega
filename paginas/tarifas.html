@@ -1,175 +1,273 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth motion-reduce:scroll-auto">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifas y recorridos | Rueda Libre</title>
     <meta name="description" content="Consulta los precios de alquiler de bicicletas y recorridos guiados en Medellín.">
-    <link rel="stylesheet" href="../style.css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/menu.js" defer></script>
 </head>
-<body>
 
-    <header class="encabezado">
-        <a href="../index.html" class="marca">Rueda Libre Medellín</a>
+<body class="flex min-h-screen flex-col bg-white font-sans text-black">
 
-        <button class="menu-toggle" type="button" aria-expanded="false"
-                aria-controls="menu-principal" aria-label="Abrir menú">
-            <span></span><span></span><span></span>
+    <header class="sticky top-0 z-20 flex items-center justify-between gap-4 bg-amarillo px-[5%] py-4">
+        <a href="../index.html" class="text-xl font-bold">Rueda Libre Medellín</a>
+
+        <button type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú"
+            class="group/btn flex h-11 w-11 flex-col justify-center gap-[5px] rounded-md border-2 border-black bg-transparent p-2.5 lg:hidden">
+            <span
+                class="block h-0.5 rounded bg-black transition motion-reduce:transition-none group-aria-expanded/btn:translate-y-[7px] group-aria-expanded/btn:rotate-45"></span>
+            <span
+                class="block h-0.5 rounded bg-black transition motion-reduce:transition-none group-aria-expanded/btn:opacity-0"></span>
+            <span
+                class="block h-0.5 rounded bg-black transition motion-reduce:transition-none group-aria-expanded/btn:-translate-y-[7px] group-aria-expanded/btn:-rotate-45"></span>
         </button>
 
-        <nav class="menu-principal" id="menu-principal" aria-label="Principal">
-            <ul>
-                <li class="desplegable">
-                    <a href="../index.html">Inicio</a>
-                    <ul class="submenu">
-                        <li><a href="../index.html#quienes-somos">¿Quiénes somos?</a></li>
-                        <li><a href="../index.html#servicios">Nuestros servicios</a></li>
+        <nav id="menu-principal" aria-label="Principal"
+            class="absolute inset-x-0 top-full hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-black/20 bg-amarillo px-[5%] pb-4 pt-2 lg:static lg:block lg:max-h-none lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0">
+            <ul class="flex flex-col lg:flex-row lg:flex-wrap lg:items-center lg:justify-end lg:gap-8">
+
+                <li class="group/item relative lg:hover:cursor-pointer lg:hover:bg-white">
+                    <a href="../index.html"
+                        class="block border-b border-black/15 px-2 py-3 font-bold hover:bg-amarillo-claro lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-transparent">Inicio</a>
+                    <ul
+                        class="pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:hidden lg:min-w-[200px] lg:flex-col lg:bg-amarillo lg:p-0.5 lg:group-hover/item:flex lg:group-focus-within/item:flex">
+                        <li><a href="../index.html#quienes-somos"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">¿Quiénes
+                                somos?</a></li>
+                        <li><a href="../index.html#servicios"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Nuestros
+                                servicios</a></li>
                     </ul>
                 </li>
 
-                <li class="desplegable">
-                    <a href="tarifas.html" aria-current="page">Tarifas y rutas</a>
-                    <ul class="submenu">
-                        <li><a href="tarifas.html#tarifas-alquiler">Ver tarifas</a></li>
-                        <li><a href="tarifas.html#recorridos">Recorridos guiados</a></li>
+                <li class="group/item relative lg:hover:cursor-pointer lg:hover:bg-white">
+                    <a href="tarifas.html" aria-current="page"
+                        class="block border-b border-black/15 px-2 py-3 font-bold hover:bg-amarillo-claro aria-[current=page]:underline lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-transparent">Tarifas
+                        y rutas</a>
+                    <ul
+                        class="pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:hidden lg:min-w-[200px] lg:flex-col lg:bg-amarillo lg:p-0.5 lg:group-hover/item:flex lg:group-focus-within/item:flex">
+                        <li><a href="tarifas.html#tarifas-alquiler"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Ver
+                                tarifas</a></li>
+                        <li><a href="tarifas.html#recorridos"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Recorridos
+                                guiados</a></li>
                     </ul>
                 </li>
 
-                <li class="desplegable">
-                    <a href="reservas.html">Reservas</a>
-                    <ul class="submenu">
-                        <li><a href="../index.html#como-alquilar">¿Cómo alquilar?</a></li>
-                        <li><a href="../index.html#encuentranos">Encuéntranos</a></li>
+                <li class="group/item relative lg:hover:cursor-pointer lg:hover:bg-white">
+                    <a href="reservas.html"
+                        class="block border-b border-black/15 px-2 py-3 font-bold hover:bg-amarillo-claro lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-transparent">Reservas</a>
+                    <ul
+                        class="pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:hidden lg:min-w-[200px] lg:flex-col lg:bg-amarillo lg:p-0.5 lg:group-hover/item:flex lg:group-focus-within/item:flex">
+                        <li><a href="../index.html#como-alquilar"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">¿Cómo
+                                alquilar?</a></li>
+                        <li><a href="../index.html#encuentranos"
+                                class="block px-2 py-2 text-[0.95rem] hover:bg-amarillo-claro lg:text-base">Encuéntranos</a>
+                        </li>
                     </ul>
                 </li>
+
             </ul>
         </nav>
     </header>
 
-    <div class="titulo-pagina">
-        <h1>Tarifas Rueda Libre</h1>
+    <div class="bg-amarillo-claro px-[5%] py-8 text-center">
+        <h1 class="text-3xl font-bold sm:text-4xl">Tarifas Rueda Libre</h1>
     </div>
 
-    <main>
+    <main class="mx-auto w-full max-w-[900px] flex-1 px-[5%] py-10">
 
-        <section id="tarifas-alquiler">
-            <h2>Tarifas de alquiler</h2>
+        <section id="tarifas-alquiler" class="mb-8 scroll-mt-20">
+            <h2 class="mb-3 text-2xl font-bold sm:text-3xl">Tarifas de alquiler</h2>
 
-            <div class="tabla-contenedor">
-                <table class="tabla-tarifas">
-                    <caption>Precios de alquiler de bicicletas</caption>
-                    <thead>
+            <div class="mb-6 sm:overflow-x-auto">
+                <table class="block w-full border-collapse sm:table sm:border sm:border-black">
+                    <caption class="block py-2 text-left font-bold sm:table-caption">Precios de alquiler de bicicletas
+                    </caption>
+                    <thead class="sr-only sm:not-sr-only sm:table-header-group">
                         <tr>
-                            <th scope="col">Tipo de bicicleta</th>
-                            <th scope="col">1 hora</th>
-                            <th scope="col">Medio día (4 h)</th>
-                            <th scope="col">Día completo</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Tipo de
+                                bicicleta</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">1 hora</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Medio día (4
+                                h)</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Día completo
+                            </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Urbana</th>
-                            <td data-label="1 hora">$10.000</td>
-                            <td data-label="Medio día (4 h)">$30.000</td>
-                            <td data-label="Día completo">$50.000</td>
+                    <tbody class="block sm:table-row-group">
+                        <tr
+                            class="mb-4 block overflow-hidden rounded-lg border border-black sm:mb-0 sm:table-row sm:rounded-none sm:border-0">
+                            <th scope="row"
+                                class="block bg-amarillo p-2 text-left font-bold sm:table-cell sm:border sm:border-black sm:bg-transparent">
+                                Urbana</th>
+                            <td data-label="1 hora"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $10.000</td>
+                            <td data-label="Medio día (4 h)"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $30.000</td>
+                            <td data-label="Día completo"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $50.000</td>
                         </tr>
-                        <tr>
-                            <th scope="row">Montaña</th>
-                            <td data-label="1 hora">$15.000</td>
-                            <td data-label="Medio día (4 h)">$45.000</td>
-                            <td data-label="Día completo">$70.000</td>
+                        <tr
+                            class="mb-4 block overflow-hidden rounded-lg border border-black sm:mb-0 sm:table-row sm:rounded-none sm:border-0">
+                            <th scope="row"
+                                class="block bg-amarillo p-2 text-left font-bold sm:table-cell sm:border sm:border-black sm:bg-transparent">
+                                Montaña</th>
+                            <td data-label="1 hora"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $15.000</td>
+                            <td data-label="Medio día (4 h)"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $45.000</td>
+                            <td data-label="Día completo"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $70.000</td>
                         </tr>
-                        <tr>
-                            <th scope="row">Eléctrica</th>
-                            <td data-label="1 hora">$25.000</td>
-                            <td data-label="Medio día (4 h)">$70.000</td>
-                            <td data-label="Día completo">$110.000</td>
+                        <tr
+                            class="mb-4 block overflow-hidden rounded-lg border border-black sm:mb-0 sm:table-row sm:rounded-none sm:border-0">
+                            <th scope="row"
+                                class="block bg-amarillo p-2 text-left font-bold sm:table-cell sm:border sm:border-black sm:bg-transparent">
+                                Eléctrica</th>
+                            <td data-label="1 hora"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $25.000</td>
+                            <td data-label="Medio día (4 h)"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $70.000</td>
+                            <td data-label="Día completo"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $110.000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section id="recorridos">
-            <h2>Recorridos guiados</h2>
+        <section id="recorridos" class="mb-8 scroll-mt-20">
+            <h2 class="mb-3 text-2xl font-bold sm:text-3xl">Recorridos guiados</h2>
 
-            <div class="tabla-contenedor">
-                <table class="tabla-tarifas">
-                    <caption>Precios y características de los recorridos</caption>
-                    <thead>
+            <div class="mb-6 sm:overflow-x-auto">
+                <table class="block w-full border-collapse sm:table sm:border sm:border-black">
+                    <caption class="block py-2 text-left font-bold sm:table-caption">Precios y características de los
+                        recorridos</caption>
+                    <thead class="sr-only sm:not-sr-only sm:table-header-group">
                         <tr>
-                            <th scope="col">Recorrido</th>
-                            <th scope="col">Distancia</th>
-                            <th scope="col">Duración</th>
-                            <th scope="col">Nivel</th>
-                            <th scope="col">Precio por persona</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Recorrido
+                            </th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Distancia
+                            </th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Duración</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Nivel</th>
+                            <th scope="col" class="p-2 text-left sm:border sm:border-black sm:bg-amarillo">Precio por
+                                persona</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Río y Parques</th>
-                            <td data-label="Distancia">12 km</td>
-                            <td data-label="Duración">2 horas</td>
-                            <td data-label="Nivel">Fácil</td>
-                            <td data-label="Precio por persona">$45.000</td>
+                    <tbody class="block sm:table-row-group">
+                        <tr
+                            class="mb-4 block overflow-hidden rounded-lg border border-black sm:mb-0 sm:table-row sm:rounded-none sm:border-0">
+                            <th scope="row"
+                                class="block bg-amarillo p-2 text-left font-bold sm:table-cell sm:border sm:border-black sm:bg-transparent">
+                                Río y Parques</th>
+                            <td data-label="Distancia"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                12 km</td>
+                            <td data-label="Duración"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                2 horas</td>
+                            <td data-label="Nivel"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                Fácil</td>
+                            <td data-label="Precio por persona"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $45.000</td>
                         </tr>
-                        <tr>
-                            <th scope="row">Sabores de Barrio</th>
-                            <td data-label="Distancia">18 km</td>
-                            <td data-label="Duración">3 horas</td>
-                            <td data-label="Nivel">Medio</td>
-                            <td data-label="Precio por persona">$60.000</td>
+                        <tr
+                            class="mb-4 block overflow-hidden rounded-lg border border-black sm:mb-0 sm:table-row sm:rounded-none sm:border-0">
+                            <th scope="row"
+                                class="block bg-amarillo p-2 text-left font-bold sm:table-cell sm:border sm:border-black sm:bg-transparent">
+                                Sabores de Barrio</th>
+                            <td data-label="Distancia"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                18 km</td>
+                            <td data-label="Duración"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                3 horas</td>
+                            <td data-label="Nivel"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                Medio</td>
+                            <td data-label="Precio por persona"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $60.000</td>
                         </tr>
-                        <tr>
-                            <th scope="row">Reto Las Palmas</th>
-                            <td data-label="Distancia">25 km</td>
-                            <td data-label="Duración">4 horas</td>
-                            <td data-label="Nivel">Difícil</td>
-                            <td data-label="Precio por persona">$85.000</td>
+                        <tr
+                            class="mb-4 block overflow-hidden rounded-lg border border-black sm:mb-0 sm:table-row sm:rounded-none sm:border-0">
+                            <th scope="row"
+                                class="block bg-amarillo p-2 text-left font-bold sm:table-cell sm:border sm:border-black sm:bg-transparent">
+                                Reto Las Palmas</th>
+                            <td data-label="Distancia"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                25 km</td>
+                            <td data-label="Duración"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                4 horas</td>
+                            <td data-label="Nivel"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                Difícil</td>
+                            <td data-label="Precio por persona"
+                                class="flex justify-between gap-4 border-t border-black/20 p-2 text-right before:font-bold before:content-[attr(data-label)] sm:table-cell sm:border sm:border-black sm:text-left sm:before:content-none">
+                                $85.000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section>
-            <h2>Información importante</h2>
+        <section class="mb-8">
+            <h2 class="mb-3 text-2xl font-bold sm:text-3xl">Información importante</h2>
 
-            <p>Todas las tarifas incluyen casco y candado.</p>
-            <p>Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
+            <p class="mb-4 max-w-[70ch]">Todas las tarifas incluyen casco y candado.</p>
+            <p class="mb-4 max-w-[70ch]">Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
 
-            <h3>Qué llevar</h3>
-            <ul>
+            <h3 class="mb-1 text-lg font-bold">Qué llevar</h3>
+            <ul class="mb-4 list-disc pl-6">
                 <li>Ropa cómoda</li>
                 <li>Agua</li>
                 <li>Protector solar</li>
                 <li>Documento de identidad</li>
             </ul>
 
-            <a href="reservas.html" class="boton-principal">Reservar ahora</a>
+            <a href="reservas.html"
+                class="inline-block rounded-md bg-amarillo px-7 py-3 font-bold text-black hover:bg-amarillo-claro">Reservar
+                ahora</a>
         </section>
 
     </main>
 
-    <footer>
-        <div class="pie-bloque">
-            <h3>Rueda Libre</h3>
-            <p>Alquiler de bicicletas en Medellín</p>
+    <footer class="grid bg-amarillo sm:grid-cols-2 lg:grid-cols-3">
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Rueda Libre</h3>
+            <p class="mb-1">Alquiler de bicicletas en Medellín</p>
         </div>
-
-        <div class="pie-bloque">
-            <h3>Contacto</h3>
-            <p><a href="mailto:somos@ruedalibre.co">somos@ruedalibre.co</a></p>
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Contacto</h3>
+            <p class="mb-1"><a href="mailto:somos@ruedalibre.co" class="underline">somos@ruedalibre.co</a></p>
         </div>
-
-        <div class="pie-bloque">
-            <h3>Horario</h3>
-            <p>Lunes a viernes: 7:00 a. m. - 7:00 p. m.</p>
-            <p>Sábados, domingos y festivos: 6:00 a. m. - 2:00 p. m.</p>
-            <p>© 2026 Rueda Libre</p>
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Horario</h3>
+            <p class="mb-1">Lunes a viernes: 7:00 a. m. - 7:00 p. m.</p>
+            <p class="mb-1">Sábados, domingos y festivos: 6:00 a. m. - 2:00 p. m.</p>
+            <p class="mb-1">2026 Rueda Libre</p>
         </div>
     </footer>
 
 </body>
+
 </html>
