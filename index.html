@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
-    <meta name="description" content="Alquiler de bicicletas y recorridos guiados en Medellín.">git remote -v
+    <meta name="description" content="Alquiler de bicicletas y recorridos guiados en Medellín.">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { amarillo: '#ffeb00', claro: '#fff58a' },
+                    fontFamily: { sans: ["'Lucida Sans'", 'Verdana', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
 
     <header class="encabezado">
         <a href="index.html" class="marca">Rueda Libre Medellín</a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false"
-                aria-controls="menu-principal" aria-label="Abrir menú">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal"
+            aria-label="Abrir menú">
             <span></span><span></span><span></span>
         </button>
 
@@ -53,14 +66,18 @@
         <img src="img/Rueda Libre Medellín en movimiento.png" alt="Logo de Rueda Libre" class="logo">
 
         <p class="descripcion">
-            En Rueda Libre te ofrecemos el alquiler de bicicletas en Medellín para que explores la ciudad, disfrutes de sus paisajes y vivas nuevas aventuras sobre ruedas. Ya sea para pasear, hacer ejercicio o descubrir nuevos lugares, ¡tenemos la bicicleta ideal para ti!
+            En Rueda Libre te ofrecemos el alquiler de bicicletas en Medellín para que explores la ciudad, disfrutes de
+            sus paisajes y vivas nuevas aventuras sobre ruedas. Ya sea para pasear, hacer ejercicio o descubrir nuevos
+            lugares, ¡tenemos la bicicleta ideal para ti!
         </p>
         <a href="paginas/reservas.html" class="boton-principal">Reservar ahora</a>
     </section>
 
     <section id="quienes-somos">
         <h2>¿Quiénes somos?</h2>
-        <p>Somos un negocio de alquiler de bicicletas en Medellín, creado para que disfrutes la ciudad de una manera divertida, saludable y sostenible. Queremos que vivas nuevas experiencias, explores diferentes lugares y recorras cada camino sobre dos ruedas. ¡Anímate a pedalear con nosotros!</p>
+        <p>Somos un negocio de alquiler de bicicletas en Medellín, creado para que disfrutes la ciudad de una manera
+            divertida, saludable y sostenible. Queremos que vivas nuevas experiencias, explores diferentes lugares y
+            recorras cada camino sobre dos ruedas. ¡Anímate a pedalear con nosotros!</p>
     </section>
 
     <section id="servicios">
@@ -110,8 +127,8 @@
         <h2>Encuéntranos</h2>
         <p>Ven y recorre Medellín con Rueda Libre.</p>
         <p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Medellin+Colombia"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://www.google.com/maps/search/?api=1&query=Medellin+Colombia" target="_blank"
+                rel="noopener noreferrer">
                 Ver ubicación en el mapa
             </a>
         </p>
@@ -137,4 +154,5 @@
     </footer>
 
 </body>
+
 </html>
