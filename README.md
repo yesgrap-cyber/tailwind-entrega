@@ -8,6 +8,10 @@ Sitio web de un negocio de alquiler de bicicletas en Medellín. Muestra los serv
  **Tarifas y rutas:** precios de alquiler y recorridos guiados.
  **Reservas:** datos de contacto y horario de atención.
 
+## Ver página
+
+[Ver página](https://yesgrap-cyber.github.io/tailwind-entrega/)
+
 ## Estructura del proyecto
 
 ``` Rueda libre
