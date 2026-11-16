@@ -6,19 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
     <meta name="description" content="Alquiler de bicicletas y recorridos guiados en Medellín.">
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { amarillo: { DEFAULT: '#ffeb00', claro: '#fff58a' } },
-                    fontFamily: {
-                        sans: ["'Lucida Sans'", "'Lucida Sans Regular'", "'Lucida Grande'", "'Lucida Sans Unicode'", 'Geneva', 'Verdana', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/styles.css">
     <script src="js/menu.js" defer></script>
 </head>
 
@@ -88,98 +76,115 @@
         </nav>
     </header>
 
-    <section class="portada">
-        <div class="imgprincipal">
-            <img src="img/file_00000000456081f5a34f9befe097cce7.png" alt="Ciclistas recorriendo Medellín">
+    <!-- Portada: se oculta cuando se abre una sección con :target -->
+    <section
+        class="relative flex min-h-[520px] flex-col justify-between gap-5 p-4 group-has-[:target]/page:hidden sm:px-10 sm:py-[30px] lg:min-h-[500px]">
+        <div class="absolute inset-0 z-0">
+            <img src="img/file_00000000456081f5a34f9befe097cce7.png" alt="Ciclistas recorriendo Medellín"
+                class="h-full w-full object-cover">
         </div>
 
-        <img src="img/Rueda Libre Medellín en movimiento.png" alt="Logo de Rueda Libre" class="logo">
+        <img src="img/Rueda Libre Medellín en movimiento.png" alt="Logo de Rueda Libre"
+            class="relative z-10 ml-[4%] w-[clamp(160px,45vw,400px)] self-start sm:ml-[6%] lg:ml-[9%]">
 
-        <p class="descripcion">
+        <p class="relative z-10 max-w-[700px] rounded-lg bg-black/55 p-5 text-white sm:p-[30px] lg:p-[50px]">
             En Rueda Libre te ofrecemos el alquiler de bicicletas en Medellín para que explores la ciudad, disfrutes de
             sus paisajes y vivas nuevas aventuras sobre ruedas. Ya sea para pasear, hacer ejercicio o descubrir nuevos
             lugares, ¡tenemos la bicicleta ideal para ti!
         </p>
-        <a href="paginas/reservas.html" class="boton-principal">Reservar ahora</a>
+
+        <a href="paginas/reservas.html"
+            class="relative z-10 self-start rounded-md bg-amarillo px-7 py-3 font-bold text-black hover:bg-amarillo-claro">Reservar
+            ahora</a>
     </section>
 
-    <section id="quienes-somos">
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos un negocio de alquiler de bicicletas en Medellín, creado para que disfrutes la ciudad de una manera
-            divertida, saludable y sostenible. Queremos que vivas nuevas experiencias, explores diferentes lugares y
-            recorras cada camino sobre dos ruedas. ¡Anímate a pedalear con nosotros!</p>
+    <section id="quienes-somos" class="mx-auto hidden w-full max-w-[900px] px-[5%] py-10 target:block">
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl">¿Quiénes somos?</h2>
+        <p class="mb-4 max-w-[70ch]">Somos un negocio de alquiler de bicicletas en Medellín, creado para que disfrutes
+            la ciudad de una manera divertida, saludable y sostenible. Queremos que vivas nuevas experiencias, explores
+            diferentes lugares y recorras cada camino sobre dos ruedas. ¡Anímate a pedalear con nosotros!</p>
     </section>
 
-    <section id="servicios">
-        <h2>Nuestros servicios</h2>
+    <section id="servicios" class="mx-auto hidden w-full max-w-[900px] px-[5%] py-10 target:block">
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl">Nuestros servicios</h2>
 
-        <div class="tarjetas">
-            <article class="tarjeta">
-                <h3>Alquiler de bicicletas</h3>
-                <p>Bicicletas urbanas, de montaña y eléctricas por hora, medio día o día completo.</p>
-                <a class="tarjeta-enlace" href="paginas/tarifas.html#tarifas-alquiler">Ver tarifas</a>
+        <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="flex flex-col rounded-lg border border-black bg-white p-6">
+                <h3 class="mb-1 text-lg font-bold">Alquiler de bicicletas</h3>
+                <p class="mb-4">Bicicletas urbanas, de montaña y eléctricas por hora, medio día o día completo.</p>
+                <a href="paginas/tarifas.html" class="mt-auto font-bold underline">Ver tarifas</a>
             </article>
 
-            <article class="tarjeta">
-                <h3>Mantenimiento</h3>
-                <p>Revisamos frenos, cadena y llantas.</p>
-                <ul>
+            <article class="flex flex-col rounded-lg border border-black bg-white p-6">
+                <h3 class="mb-1 text-lg font-bold">Mantenimiento</h3>
+                <p class="mb-4">Revisamos frenos, cadena y llantas.</p>
+                <ul class="mb-4 list-disc pl-5">
                     <li>Ajuste de frenos</li>
                     <li>Lubricación de cadena</li>
                     <li>Cambio de llantas</li>
                 </ul>
             </article>
 
-            <article class="tarjeta">
-                <h3>Recorridos guiados</h3>
-                <p>Explora Medellín con nuestros recorridos en bicicleta.</p>
-                <a class="tarjeta-enlace" href="paginas/tarifas.html#recorridos">Consultar recorridos y precios</a>
+            <article class="flex flex-col rounded-lg border border-black bg-white p-6">
+                <h3 class="mb-1 text-lg font-bold">Recorridos guiados</h3>
+                <p class="mb-4">Explora Medellín con nuestros recorridos en bicicleta.</p>
+                <a href="paginas/tarifas.html#recorridos" class="mt-auto font-bold underline">Consultar recorridos y
+                    precios</a>
             </article>
         </div>
     </section>
 
-    <section id="como-alquilar">
-        <h2>¿Cómo alquilar?</h2>
-        <p>En Rueda Libre alquilar tu bicicleta es muy fácil. Sigue estos sencillos pasos:</p>
+    <section id="como-alquilar" class="mx-auto hidden w-full max-w-[900px] px-[5%] py-10 target:block">
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl">¿Cómo alquilar?</h2>
+        <p class="mb-4 max-w-[70ch]">En Rueda Libre alquilar tu bicicleta es muy fácil. Sigue estos sencillos pasos:</p>
 
-        <ol class="pasos">
-            <li>Elige tu bicicleta</li>
-            <li>Reserva tu alquiler</li>
-            <li>Realiza el pago</li>
-            <li>Empieza tu aventura</li>
+        <ol class="my-5 grid list-none gap-4 [counter-reset:paso] sm:grid-cols-2 lg:grid-cols-4">
+            <li
+                class="relative rounded-lg bg-amarillo-claro py-4 pl-14 pr-4 font-bold [counter-increment:paso] before:absolute before:left-4 before:top-1/2 before:grid before:h-[1.9rem] before:w-[1.9rem] before:-translate-y-1/2 before:place-items-center before:rounded-full before:bg-black before:text-[0.95rem] before:text-amarillo before:content-[counter(paso)]">
+                Elige tu bicicleta</li>
+            <li
+                class="relative rounded-lg bg-amarillo-claro py-4 pl-14 pr-4 font-bold [counter-increment:paso] before:absolute before:left-4 before:top-1/2 before:grid before:h-[1.9rem] before:w-[1.9rem] before:-translate-y-1/2 before:place-items-center before:rounded-full before:bg-black before:text-[0.95rem] before:text-amarillo before:content-[counter(paso)]">
+                Reserva tu alquiler</li>
+            <li
+                class="relative rounded-lg bg-amarillo-claro py-4 pl-14 pr-4 font-bold [counter-increment:paso] before:absolute before:left-4 before:top-1/2 before:grid before:h-[1.9rem] before:w-[1.9rem] before:-translate-y-1/2 before:place-items-center before:rounded-full before:bg-black before:text-[0.95rem] before:text-amarillo before:content-[counter(paso)]">
+                Realiza el pago</li>
+            <li
+                class="relative rounded-lg bg-amarillo-claro py-4 pl-14 pr-4 font-bold [counter-increment:paso] before:absolute before:left-4 before:top-1/2 before:grid before:h-[1.9rem] before:w-[1.9rem] before:-translate-y-1/2 before:place-items-center before:rounded-full before:bg-black before:text-[0.95rem] before:text-amarillo before:content-[counter(paso)]">
+                Empieza tu aventura</li>
         </ol>
 
-        <p class="nota"><strong>Incluye candado y casco.</strong></p>
-        <a href="paginas/reservas.html" class="boton-principal">Reservar ahora</a>
+        <p class="mb-4 rounded-r-lg border-l-4 border-amarillo bg-[#fffbd0] p-3.5"><strong>Incluye candado y
+                casco.</strong></p>
+        <a href="paginas/reservas.html"
+            class="inline-block rounded-md bg-amarillo px-7 py-3 font-bold text-black hover:bg-amarillo-claro">Reservar
+            ahora</a>
     </section>
 
-    <section id="encuentranos">
-        <h2>Encuéntranos</h2>
-        <p>Ven y recorre Medellín con Rueda Libre.</p>
-        <p>
+    <section id="encuentranos" class="mx-auto hidden w-full max-w-[900px] px-[5%] py-10 target:block">
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl">Encuéntranos</h2>
+        <p class="mb-4">Ven y recorre Medellín con Rueda Libre.</p>
+        <p class="mb-4">
             <a href="https://www.google.com/maps/search/?api=1&query=Medellin+Colombia" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" class="underline">
                 Ver ubicación en el mapa
             </a>
         </p>
     </section>
 
-    <footer>
-        <div class="pie-bloque">
-            <h3>Rueda Libre</h3>
-            <p>Alquiler de bicicletas en Medellín</p>
+    <footer class="mt-auto grid bg-amarillo sm:grid-cols-2 lg:grid-cols-3">
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Rueda Libre</h3>
+            <p class="mb-1">Alquiler de bicicletas en Medellín</p>
         </div>
-
-        <div class="pie-bloque">
-            <h3>Contacto</h3>
-            <p><a href="mailto:somos@ruedalibre.co">somos@ruedalibre.co</a></p>
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Contacto</h3>
+            <p class="mb-1"><a href="mailto:somos@ruedalibre.co" class="underline">somos@ruedalibre.co</a></p>
         </div>
-
-        <div class="pie-bloque">
-            <h3>Horario</h3>
-            <p>Lunes a viernes: 7:00 a. m. - 7:00 p. m.</p>
-            <p>Sábados, domingos y festivos: 6:00 a. m. - 2:00 p. m.</p>
-            <p>© 2026 Rueda Libre</p>
+        <div class="px-[5%] py-5 sm:last:col-span-2 lg:last:col-span-1">
+            <h3 class="mb-1 text-lg font-bold">Horario</h3>
+            <p class="mb-1">Lunes a viernes: 7:00 a. m. - 7:00 p. m.</p>
+            <p class="mb-1">Sábados, domingos y festivos: 6:00 a. m. - 2:00 p. m.</p>
+            <p class="mb-1">© 2026 Rueda Libre</p>
         </div>
     </footer>
 
